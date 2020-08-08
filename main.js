@@ -1,13 +1,10 @@
 'use strict';
-let num = 266219;
+const num = 266219;
 let result = 1;
-num = num.toString();
+const numSplit = num.toString().split('');
 
-for (let i = 0; i < num.length; i++) {
-
-    result *= parseInt(num[i]);
-}
-
-let result2 = result * result * result;
-
-console.log(result2.toString().slice(0, 2));
+numSplit.forEach((item) => {
+    result *= item;
+});
+result = result ** 3;
+console.log(result.toString().slice(0, 2));
