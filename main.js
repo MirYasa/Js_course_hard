@@ -1,8 +1,34 @@
 'use strict';
-const num = 266219,
-    numSplit = num.toString().split('');
-let result = numSplit.reduce((a, b) => {
-    return a *= b;
-});
-console.log(result);
-console.log((result ** 3).toString().slice(0, 2));
+
+const enDays = ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    ruDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
+
+let lang = prompt('Введите "en" либо "ru" для того чтобы выбрать язык'),
+    arr = {
+        'ru': ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+        'en': ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+    },
+    namePerson = prompt('Введите имя'),
+    result = namePerson == 'Артём' ? console.log('Директор') :
+    namePerson == 'Максим' ? console.log('Преподователь') : console.log('Студент');
+
+if (lang == 'en') {
+    console.log(enDays);
+} else if (lang == 'ru') {
+    console.log(ruDays);
+} else {
+    console.log('Вы не выбрали язык!');
+}
+
+switch (lang) {
+    case 'ru':
+        console.log(ruDays);
+        break;
+    case 'en':
+        console.log(enDays);
+        break;
+    default:
+        console.log('Вы не выбрали язык!');
+        break;
+}
+console.log(arr[lang]);
