@@ -1,5 +1,8 @@
 'use strict';
 const num = 266219,
-    numSplit = num.toString().split(''),
-    reducer = (accumulator, currentValue) => accumulator *  currentValue;
-console.log((numSplit.reduce(reducer) ** 3).toString().slice(0, 2));
+    numSplit = num.toString().split('');
+let result = numSplit.reduce((a, b) => {
+    return a *= b;
+});
+console.log(result);
+console.log((result ** 3).toString().slice(0, 2));
