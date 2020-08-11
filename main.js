@@ -1,33 +1,16 @@
 'use strict';
+const str = prompt('Введите строку', '');
 
-const enDays = ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    ruDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-    lang = prompt('Введите "en" либо "ru" для того чтобы выбрать язык'),
-    arr = {
-        'ru': ruDays,
-        'en': enDays,
-        '': 'Вы не выбрали язык!',
-    },
-    namePerson = prompt('Введите имя'),
-    result = namePerson == 'Артём' ? console.log('Директор') : namePerson == 'Максим' ? console.log('Преподователь') : console.log('Студент');
-
-if (lang == 'en') {
-    console.log(enDays);
-} else if (lang == 'ru') {
-    console.log(ruDays);
-} else {
-    console.log('Вы не выбрали язык!');
+function hard(a) {
+    if (typeof (a) != 'string') {
+        return 'Вы ввели не строку!';
+    } else {
+        if (a.length > 30) {
+            return a.slice(0,30) + '...';
+        } else {
+            return a.trim();
+        }
+    }
 }
 
-switch (lang) {
-    case 'ru':
-        console.log(ruDays);
-        break;
-    case 'en':
-        console.log(enDays);
-        break;
-    default:
-        console.log('Вы не выбрали язык!');
-        break;
-}
-console.log(arr[lang]);
+console.log(hard(str));
