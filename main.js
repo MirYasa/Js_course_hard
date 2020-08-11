@@ -1,16 +1,15 @@
 'use strict';
 
 const enDays = ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    ruDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'];
-
-let lang = prompt('Введите "en" либо "ru" для того чтобы выбрать язык'),
+    ruDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
+    lang = prompt('Введите "en" либо "ru" для того чтобы выбрать язык'),
     arr = {
-        'ru': ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-        'en': ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        'ru': ruDays,
+        'en': enDays,
+        '': 'Вы не выбрали язык!',
     },
     namePerson = prompt('Введите имя'),
-    result = namePerson == 'Артём' ? console.log('Директор') :
-    namePerson == 'Максим' ? console.log('Преподователь') : console.log('Студент');
+    result = namePerson == 'Артём' ? console.log('Директор') : namePerson == 'Максим' ? console.log('Преподователь') : console.log('Студент');
 
 if (lang == 'en') {
     console.log(enDays);
