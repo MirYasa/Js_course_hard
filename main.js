@@ -1,18 +1,16 @@
 'use strict';
-const arr = ['12312', '45', '1354', '2593', '40123', '6432', '12356'];
 
-for (let i = 0; i < arr.length; i++) {
-    if (arr[i][0] == 4 || arr[i][0] == 2) {
-        console.log(arr[i]);
+let week = ['Sunday', 'Monday', 'Tuesday', 'Wednsday', 'Thursday', 'Friday', 'Saturday'],
+    toDay = new Date(),
+    a = toDay.getDay();
+
+for (let i = 0; i < 7; i++) {
+
+    if (i == a) {
+        document.write(`<p><i>${week[i]}</i></p>`);
+    } else if (week[i] == 'Saturday' || week[i] == 'Sunday') {
+        document.write(`<p><b>${week[i]}</b></p>`);
+    }  else {
+        document.write(`<p>${week[i]}</p>`);
     }
 }
-
-nextPrime:
-    for (let i = 2; i <= 100; i++) {
-        for (let j = 2; j < i; j++) {
-            if (i % j == 0) {
-                continue nextPrime;
-            }
-        }
-        console.log(i + ' ' + 'Делится на 1 и на' + ' ' + i);
-    }
