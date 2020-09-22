@@ -3,11 +3,7 @@
 const enDays = ['Monday', 'Tusday', 'Wednsday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     ruDays = ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
     lang = prompt('Введите "en" либо "ru" для того чтобы выбрать язык'),
-    arr = {
-        'ru': ruDays,
-        'en': enDays,
-        '': 'Вы не выбрали язык!',
-    },
+    arr = lang == 'ru' ? console.log(ruDays) : lang == 'en' ? console.log(enDays) : console.log('Вы не выбрали язык'),
     namePerson = prompt('Введите имя'),
     result = namePerson == 'Артём' ? console.log('Директор') : namePerson == 'Максим' ? console.log('Преподователь') : console.log('Студент');
 
@@ -30,4 +26,3 @@ switch (lang) {
         console.log('Вы не выбрали язык!');
         break;
 }
-console.log(arr[lang.trim()]);
