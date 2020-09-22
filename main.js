@@ -30,4 +30,4 @@ switch (lang) {
         console.log('Вы не выбрали язык!');
         break;
 }
-console.log(arr[lang]);
+console.log(arr[lang.trim()]);
